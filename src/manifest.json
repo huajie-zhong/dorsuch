@@ -4,6 +4,7 @@
   "version": "1.0",
   "description": "Finds the empty suite!",
   "permissions": ["tabs", "webNavigation", "scripting"],
+  "host_permissions": ["https://reports.scl.cornell.edu/*"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
