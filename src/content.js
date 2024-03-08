@@ -8,36 +8,32 @@ function readTable() {
   }
 
   const observer = new MutationObserver((mutationsList, observer) => {
-    for (let mutation of mutationsList) {
-      if (mutation.type === "childList") {
-        const rows = tbody.querySelectorAll("tr");
+    let mutation = mutationsList[mutationsList.length - 1];
+    if (mutation.type === "childList") {
+      const rows = tbody.querySelectorAll("tr");
 
-        const counts = {};
+      const counts = {};
 
-        const frequentTexts = [];
+      const frequentTexts = [];
 
-        rows.forEach((row) => {
-          const secondCell = row.cells[1];
+      rows.forEach((row) => {
+        const secondCell = row.cells[1];
 
-          if (secondCell && secondCell.textContent.trim()) {
-            const text = secondCell.textContent.trim();
+        if (secondCell && secondCell.textContent.trim()) {
+          const text = secondCell.textContent.trim();
 
-            counts[text] = (counts[text] || 0) + 1;
-          }
+          counts[text] = (counts[text] || 0) + 1;
+        }
+      });
+
+      Object.entries(counts)
+        .filter(([text, count]) => count == 4)
+        .forEach(([text, count]) => {
+          frequentTexts.push(text);
         });
-
-        Object.entries(counts)
-          .filter(([text, count]) => count == 4)
-          .forEach(([text, count]) => {
-            frequentTexts.push(text);
-          });
-
-        console.log(frequentTexts);
-      }
+      console.log(frequentTexts);
     }
   });
 
   observer.observe(tbody, { childList: true });
 }
-
-readTable();
