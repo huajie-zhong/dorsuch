@@ -5,6 +5,11 @@
   "description": "Finds the empty suite!",
   "permissions": ["tabs", "webNavigation", "scripting"],
   "host_permissions": ["https://reports.scl.cornell.edu/*"],
+  "web_accessible_resources": [
+    {
+      "matches": ["<all_urls>"],
+      "resources": ["content.js"]
+    }],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
