@@ -20,8 +20,9 @@ To install the Dorsuch Chrome extension, follow these steps:
 ## Usage
 1. Ensure the Dorsuch extension is installed and enabled in Chrome.
 2. Navigate to a supported webpage, which is `https://reports.scl.cornell.edu/bedavailabilitybyroom`.
-3. The extension will automatically detect the page and analyze the suite availability data. The current filter condition is to find 4 occurring suite rooms.
-4. View the results in the console.
+3. Select a dorm, and click "View Availability By Room"
+4. The extension will automatically detect the page and analyze the suite availability data. The current filter condition is to find 4 occurring suite rooms.
+5. View the results in the console.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
